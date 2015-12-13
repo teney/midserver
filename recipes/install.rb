@@ -12,3 +12,9 @@ remote_file '/tmp/sncmid.zip' do
   source node['midserver']['download_url']
   action :create
 end
+
+execute 'Extract the SNC MID Server' do
+  command 'unzip /tmp/midserver'
+  cwd basedir
+  not_if { File.exists?("#{basedir}/agent/config.xml") }
+end

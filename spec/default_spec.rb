@@ -20,4 +20,8 @@ describe 'midserver::default' do
   it 'include the `service` recipe' do
     expect(chef_run).to include_recipe('midserver::service')
   end 
+
+  it 'unzips the mid zip' do
+    expect(chef_run).to run_execute('Extract the SNC MID Server')
+  end
 end
