@@ -17,6 +17,8 @@ describe 'midserver::install' do
     expect(chef_run).to create_directory('/tmp/midserver')
   end
 
-  
+  it 'creates the download zip' do
+    expect(chef_run).to create_remote_file('/tmp/sncmid.zip')
+  end  
 
 end
