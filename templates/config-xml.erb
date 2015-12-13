@@ -20,19 +20,19 @@
 
        <!-- Tells the MID server where to contact its associated Service-now instance.  Edit 
             this value to provide the URL of your organization's Service-now instance. -->
-       <parameter name="url" value="https://YOUR_INSTANCE.service-now.com"/>
+       <parameter name="url" value="<%= node['midserver']['url'] %>" />
 
 	   <!-- If your Service-now instance has authentication enabled (the normal case), set 
             these parameters to define the user name and password the MID server will use 
             to log into the instance.  -->
        
-       <parameter name="mid.instance.username" value="YOUR_INSTANCE_USER_NAME_HERE" />
-       <parameter name="mid.instance.password" value="YOUR_INSTANCE_PASSWORD_HERE" encrypt="true"/>
+       <parameter name="mid.instance.username" value="<%= node['midserver']['user'] %>" />
+       <parameter name="mid.instance.password" value="<%= node['midserver']['password'] %>" encrypt="true"/>
 	
        <!-- Defines the name by which your MID server is known on the Service-now instance.  
             Edit this value to provide the name you want, or leave it blank and the MID server
             will make up a name. -->
-       <parameter name="name" value="YOUR_MIDSERVER_NAME_GOES_HERE"/>
+       <parameter name="name" value="<%= node['midserver']['instance_name'] %>"/>
 
   <!-- *************************************************************************************
        * COMMON OPTIONAL Parameters
