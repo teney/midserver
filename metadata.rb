@@ -1,0 +1,7 @@
+name             'midserver'
+maintainer       'The Authors'
+maintainer_email 'you@example.com'
+license          'all_rights'
+description      'Installs/Configures a ServicNow MID Server'
+long_description 'Installs/Configures a ServiceNow MID Server'
+version          '0.1.0'
