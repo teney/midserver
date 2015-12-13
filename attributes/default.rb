@@ -1,3 +1,4 @@
-default['snc-midserver']['url'] = "https://instance.servicenow.com"
-default['snc-midserver']['user'] = "midserver"
-default['snc-midserver']['password'] = 'password'
+default['midserver']['url'] = "https://instance.servicenow.com"
+default['midserver']['user'] = "midserver"
+default['midserver']['password'] = 'password'
+default['midserver']['install_base'] = '/tmp/midserver'
