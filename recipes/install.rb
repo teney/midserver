@@ -8,13 +8,13 @@ directory basedir do
   action :create
 end
 
-remote_file '/tmp/sncmid.zip' do
+remote_file node['midserver']['zipfile'] do
   source node['midserver']['download_url']
   action :create
 end
 
 execute 'Extract the SNC MID Server' do
-  command 'unzip /tmp/sncmid.zip'
+  command "unzip #{node['midserver']['zipfile']}"
   cwd basedir
   not_if { File.exists?("#{basedir}/agent/config.xml") }
 end
