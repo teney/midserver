@@ -14,7 +14,7 @@ remote_file '/tmp/sncmid.zip' do
 end
 
 execute 'Extract the SNC MID Server' do
-  command 'unzip /tmp/midserver'
+  command 'unzip /tmp/sncmid.zip'
   cwd basedir
   not_if { File.exists?("#{basedir}/agent/config.xml") }
 end
