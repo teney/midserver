@@ -2,7 +2,6 @@
 
 basedir = node['midserver']['install_base']
 
-
 directory basedir do
   recursive true
   action :create
@@ -16,5 +15,5 @@ end
 execute 'Extract the SNC MID Server' do
   command "unzip #{node['midserver']['zipfile']}"
   cwd basedir
-  not_if { File.exists?("#{basedir}/agent/config.xml") }
+  not_if { File.exist?("#{basedir}/agent/config.xml") }
 end

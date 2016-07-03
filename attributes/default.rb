@@ -1,5 +1,5 @@
-default['midserver']['url'] = "https://instance.servicenow.com"
-default['midserver']['user'] = "midserver"
+default['midserver']['url'] = 'https://instance.servicenow.com'
+default['midserver']['user'] = 'midserver'
 default['midserver']['password'] = 'password'
 default['midserver']['service_name'] = 'My MID Server'
 default['midserver']['install_base'] = '/tmp/midserver'

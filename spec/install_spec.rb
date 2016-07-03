@@ -6,12 +6,11 @@
 
 require 'spec_helper'
 
-
 describe 'midserver::install' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new do |node|
-     node.set['midserver']['install_base'] = '/tmp/midserver'
-     node.set['midserver']['zipfile'] = '/tmp/midserver/sncmid.zip'
+      node.set['midserver']['install_base'] = '/tmp/midserver'
+      node.set['midserver']['zipfile'] = '/tmp/midserver/sncmid.zip'
     end.converge(described_recipe)
   end
 
@@ -24,7 +23,6 @@ describe 'midserver::install' do
   end
 
   it 'extracts the tarball' do
-    expect(chef_run).to run_execute('unzip ' '/tmp/midserver/sncmid.zip')
+    expect(chef_run).to run_execute('unzip /tmp/midserver/sncmid.zip')
   end
-
 end

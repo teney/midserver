@@ -8,9 +8,8 @@ require 'spec_helper'
 
 describe 'midserver::default' do
   let(:chef_run) do
-    runner =   ChefSpec::SoloRunner.new(
-      log_level: :error,
-      # cookbook_path: COOKBOOK_PATH,
+    runner = ChefSpec::SoloRunner.new(
+      log_level: :error
     )
     Chef::Config.force_logger true
     runner.converge(described_recipe)
